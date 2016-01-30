@@ -22,10 +22,7 @@ npm test
 
 - [article-json-to-amp](https://github.com/micnews/article-json-to-amp): Render JSON formatted article in the AMP format
 - [babel-core](https://github.com/babel/babel/tree/master/packages): Babel compiler core.
-- [babel-plugin-syntax-async-functions](https://github.com/babel/babel/tree/master/packages): Allow parsing of async functions
-- [babel-plugin-transform-async-to-generator](https://github.com/babel/babel/tree/master/packages): Turn async functions into ES2015 generators
-- [babel-plugin-transform-runtime](https://github.com/babel/babel/tree/master/packages): Externalise references to helpers and builtins, automatically polyfilling your code without polluting globals
-- [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2015 plugins.
+- [babel-preset-es2015-node4](https://github.com/jbach/babel-preset-es2015-node4): Babel preset to make node@4 ES2015 compatible.
 - [co](https://github.com/tj/co): generator async control flow goodness
 - [html-to-article-json](https://github.com/micnews/html-to-article-json): Converting HTML to article-json
 - [node-fetch](https://github.com/bitinn/node-fetch): A light-weight module that brings window.fetch to node.js and io.js
@@ -35,8 +32,9 @@ npm test
 
 ## Dev Dependencies
 
+- [semistandard](https://github.com/Flet/semistandard): All the goodness of `feross/standard` with semicolons sprinkled on top.
+- [snazzy](https://github.com/feross/snazzy): Format JavaScript Standard Style as Stylish (i.e. snazzy) output
 
-None
 
 ## License
 
