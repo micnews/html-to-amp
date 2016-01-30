@@ -5,6 +5,7 @@ import articleJsonToAmp from 'article-json-to-amp';
 import imageSize from 'request-image-size';
 import fs from 'then-fs';
 import $ from 'whacko';
+import co from 'co';
 
 const htmlToArticleJson = setupHtmlToArticleJson();
 const update = (row) => {
@@ -12,6 +13,9 @@ const update = (row) => {
   if (type === 'embed' && embedType === 'image' && src && (!width || !height)) {
     return new Promise(function (resolve, reject) {
       imageSize(src, function (err, dimensions) {
+        if (err) {
+          return reject(err);
+        }
         // skip err right now, doesn't matter
 
         console.log(dimensions);
@@ -23,24 +27,24 @@ const update = (row) => {
       });
     });
   }
-}
+};
 
-const getArticleJson = async (url) => {
-  const response = await fetch(url);
-  const html = await response.text();
+const getArticleJson = co.wrap(function * (url) {
+  const response = yield fetch(url);
+  const html = yield response.text();
   const article = $.load(html)('article').html() || html;
 
   const articleJson = htmlToArticleJson(article);
 
-  await Promise.all(articleJson.map(update));
+  yield Promise.all(articleJson.map(update));
   return articleJson;
-}
+});
 
 module.exports = () => {
-  const server = createServer(async ({url}, res) => {
+  const server = createServer(co.wrap(function * ({url}, res) {
     try {
-      const articleJson = await getArticleJson(url.slice(1));
-      const tmpl = await fs.readFile(__dirname + '/index.html', 'utf8');
+      const articleJson = yield getArticleJson(url.slice(1));
+      const tmpl = yield fs.readFile(__dirname + '/index.html', 'utf8');
       const amp = articleJsonToAmp(articleJson);
       const html = new Buffer(tmpl.replace('{{body}}', amp));
       res.writeHead(200, {
@@ -53,7 +57,7 @@ module.exports = () => {
       console.log(err && err.stack);
       res.end(err.message);
     }
-  });
+  }));
 
   return server;
 };
