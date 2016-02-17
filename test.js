@@ -38,6 +38,16 @@ test('handle image without src & without width/height', t => {
   const html = '<img />';
   const expected = '<article><figure></figure></article>';
 
-  return htmlToAmp(html)
-    .then(amp => { t.is(amp, expected); });
+  return htmlToAmp(html).then(amp => { t.is(amp, expected); });
+});
+
+test.cb('callback interface', t => {
+  const html = '<img />';
+  const expected = '<article><figure></figure></article>';
+
+  return htmlToAmp(html, (err, amp) => {
+    t.ifError(err);
+    t.is(amp, expected);
+    t.end();
+  });
 });
