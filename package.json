@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Silly module to transform html pages to amp, using html-to-article-json & article-json-to-amp",
   "scripts": {
-    "test": "npm prune && semistandard | snazzy"
+    "test": "npm prune && nyc ava && semistandard | snazzy",
+    "prepublish": "mkdir -p dist && babel lib --out-dir dist"
   },
   "bin": {
     "html-to-amp": "bin/html-to-amp.js"
@@ -24,17 +25,18 @@
   "homepage": "https://github.com/micnews/html-to-amp#readme",
   "dependencies": {
     "article-json-to-amp": "^1.2.0",
-    "babel-core": "^6.4.5",
-    "babel-preset-es2015-node4": "^2.0.3",
-    "co": "^4.6.0",
     "html-to-article-json": "^1.5.0",
-    "node-fetch": "^1.3.3",
-    "request-image-size": "^1.2.2",
-    "then-fs": "^2.0.0",
-    "whacko": "^0.19.1"
+    "pinkie-promise": "^2.0.0",
+    "request-image-size": "^1.2.2"
   },
   "devDependencies": {
+    "ava": "^0.11.0",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0",
     "semistandard": "^7.0.5",
+    "semistandard-deku": "github:micnews/semistandard#deku",
     "snazzy": "^2.0.1"
-  }
+  },
+  "main": "dist/index.js"
 }
