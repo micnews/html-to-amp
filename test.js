@@ -10,3 +10,11 @@ test('simple input', t => {
   return htmlToAmp(html)
     .then(amp => { t.is(amp, '<article><p>foo bar</p></article>'); });
 });
+
+test('handle image with size', t => {
+  const html = '<img width="100" height="200" src="http://image.com" />';
+  const expected = '<article><figure><amp-img width="100" height="200" layout="responsive" src="http://image.com"></amp-img></figure></article>';
+
+  return htmlToAmp(html)
+    .then(amp => { t.is(amp, expected); });
+});
