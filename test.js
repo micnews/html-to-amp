@@ -51,3 +51,19 @@ test.cb('callback interface', t => {
     t.end();
   });
 });
+
+test.cb('callback interface with an error', t => {
+  new Promise(resolve => {
+    const server = http.createServer((req, res) => {
+      res.end('beep boop');
+    }).listen(0, () => {
+      resolve(server.address().port);
+    });
+  }).then(port => {
+    const html = `<img src="http://localhost:${port}/">`;
+    htmlToAmp(html, err => {
+      t.ok(err);
+      t.end();
+    });
+  });
+});
