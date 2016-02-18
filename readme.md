@@ -1,4 +1,4 @@
-# html-to-amp 
+# html-to-amp [![Build Status](https://travis-ci.org/micnews/html-to-amp.png?branch=master)](https://travis-ci.org/micnews/html-to-amp)
 
 Silly module to transform html pages to amp, using html-to-article-json &amp; article-json-to-amp
 
@@ -10,6 +10,24 @@ Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't 
 npm install html-to-amp --save
 ```
 
+## Usage
+
+```js
+import htmlToAmp from 'html-to-amp';
+
+htmlToAmp('<p>beep boop</p>', (err, amp) => {
+  if (err) {
+    throw err;
+  }
+  // do something with it
+});
+
+// can also return a promises
+htmlToAmp('<p>beep boop</p>').then(amp => {
+  // do something with it
+});
+
+```
 
 ## Tests
 
@@ -21,18 +39,19 @@ npm test
 ## Dependencies
 
 - [article-json-to-amp](https://github.com/micnews/article-json-to-amp): Render JSON formatted article in the AMP format
-- [babel-core](https://github.com/babel/babel/tree/master/packages): Babel compiler core.
-- [babel-preset-es2015-node4](https://github.com/jbach/babel-preset-es2015-node4): Babel preset to make node@4 ES2015 compatible.
-- [co](https://github.com/tj/co): generator async control flow goodness
 - [html-to-article-json](https://github.com/micnews/html-to-article-json): Converting HTML to article-json
-- [node-fetch](https://github.com/bitinn/node-fetch): A light-weight module that brings window.fetch to node.js and io.js
+- [pinkie-promise](https://github.com/floatdrop/pinkie-promise): ES2015 Promise ponyfill
 - [request-image-size](https://github.com/FdezRomero/request-image-size): Detect image dimensions via request.
-- [then-fs](https://github.com/then/fs): promised FS
-- [whacko](https://github.com/inikulin/whacko): Cheerio (http://cheeriojs.github.io/cheerio/) fork that uses parse5 HTML-parser (https://github.com/inikulin/parse5) as an underlying platform 
 
 ## Dev Dependencies
 
+- [ava](https://github.com/sindresorhus/ava): Futuristic test runner 🚀
+- [babel-cli](https://github.com/babel/babel/tree/master/packages): Babel command line.
+- [babel-core](https://github.com/babel/babel/tree/master/packages): Babel compiler core.
+- [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2015 plugins.
+- [package-json-to-readme](https://github.com/zeke/package-json-to-readme): Generate a README.md from package.json contents
 - [semistandard](https://github.com/Flet/semistandard): All the goodness of `feross/standard` with semicolons sprinkled on top.
+- [semistandard-deku](https://github.com/micnews/semistandard-deku): All the goodness of `feross/standard` with semicolons sprinkled on top. Adapted for deku
 - [snazzy](https://github.com/feross/snazzy): Format JavaScript Standard Style as Stylish (i.e. snazzy) output
 
 
