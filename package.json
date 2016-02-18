@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "semistandard": "^7.0.5",
-    "snazzy": "^2.0.1"
+    "snazzy": "^3.0.0"
   }
 }
