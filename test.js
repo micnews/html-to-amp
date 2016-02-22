@@ -2,7 +2,7 @@ import test from 'ava';
 import 'babel-core/register';
 import setupHtmlToAmp from './lib';
 import http from 'http';
-import Promise from 'pinkie-promise';
+import Promise from 'bluebird';
 
 const htmlToAmp = setupHtmlToAmp();
 

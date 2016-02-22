@@ -23,8 +23,8 @@
   "homepage": "https://github.com/micnews/html-to-amp#readme",
   "dependencies": {
     "article-json-to-amp": "^1.2.0",
+    "bluebird": "^3.3.1",
     "html-to-article-json": "^1.9.1",
-    "pinkie-promise": "^2.0.0",
     "request-image-size": "^1.2.2"
   },
   "devDependencies": {

@@ -39,8 +39,8 @@ npm test
 ## Dependencies
 
 - [article-json-to-amp](https://github.com/micnews/article-json-to-amp): Render JSON formatted article in the AMP format
+- [bluebird](https://github.com/petkaantonov/bluebird): Full featured Promises/A+ implementation with exceptionally good performance
 - [html-to-article-json](https://github.com/micnews/html-to-article-json): Converting HTML to article-json
-- [pinkie-promise](https://github.com/floatdrop/pinkie-promise): ES2015 Promise ponyfill
 - [request-image-size](https://github.com/FdezRomero/request-image-size): Detect image dimensions via request.
 
 ## Dev Dependencies
