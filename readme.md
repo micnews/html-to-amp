@@ -49,9 +49,9 @@ npm test
 - [babel-cli](https://github.com/babel/babel/tree/master/packages): Babel command line.
 - [babel-core](https://github.com/babel/babel/tree/master/packages): Babel compiler core.
 - [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2015 plugins.
+- [nyc](https://github.com/bcoe/nyc): a code coverage tool that works well with subprocesses.
 - [package-json-to-readme](https://github.com/zeke/package-json-to-readme): Generate a README.md from package.json contents
 - [semistandard](https://github.com/Flet/semistandard): All the goodness of `feross/standard` with semicolons sprinkled on top.
-- [semistandard-deku](https://github.com/micnews/semistandard-deku): All the goodness of `feross/standard` with semicolons sprinkled on top. Adapted for deku
 - [snazzy](https://github.com/feross/snazzy): Format JavaScript Standard Style as Stylish (i.e. snazzy) output
 
 
