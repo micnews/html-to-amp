@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/micnews/html-to-amp#readme",
   "dependencies": {
-    "article-json-to-amp": "^1.2.0",
+    "article-json-to-amp": "^1.5.1",
     "babel-core": "^6.4.5",
     "babel-preset-es2015-node4": "^2.0.3",
     "co": "^4.6.0",
