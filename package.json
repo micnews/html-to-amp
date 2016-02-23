@@ -35,7 +35,7 @@
     "nyc": "^5.6.0",
     "package-json-to-readme": "^1.5.0",
     "semistandard": "^7.0.5",
-    "snazzy": "^2.0.1"
+    "snazzy": "^3.0.0"
   },
   "main": "dist/index.js"
 }
