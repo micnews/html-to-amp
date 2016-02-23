@@ -1,6 +1,6 @@
 # html-to-amp [![Build Status](https://travis-ci.org/micnews/html-to-amp.png?branch=master)](https://travis-ci.org/micnews/html-to-amp)
 
-Silly module to transform html pages to amp, using html-to-article-json &amp; article-json-to-amp
+Small module to transform html pages to amp, using [html-to-article-json](https://www.npmjs.com/package/html-to-article-json) &amp; [article-json-to-amp](https://www.npmjs.com/package/article-json-to-amp)
 
 ## Installation
 
