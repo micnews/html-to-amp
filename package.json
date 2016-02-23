@@ -1,6 +1,6 @@
 {
   "name": "html-to-amp",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Small module to transform html pages to amp, using [html-to-article-json](https://www.npmjs.com/package/html-to-article-json) & [article-json-to-amp](https://www.npmjs.com/package/article-json-to-amp)",
   "scripts": {
     "test": "npm prune && nyc ava && semistandard | snazzy",
