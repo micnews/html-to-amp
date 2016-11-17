@@ -1,4 +1,5 @@
-import htmlToAmp from 'html-to-amp';
+import setupHtmlToAmp from 'html-to-amp';
+const htmlToAmp = setupHtmlToAmp();
 
 const html = `
   <p>beep booop</p>
