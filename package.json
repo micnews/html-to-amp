@@ -33,7 +33,7 @@
     "babel-core": "^6.5.2",
     "babel-preset-es2015": "^6.5.0",
     "nyc": "^8.3.0",
-    "package-json-to-readme": "^1.5.0",
+    "package-json-to-readme": "^2.0.0",
     "semistandard": "^9.0.0",
     "snazzy": "^4.0.0"
   },
